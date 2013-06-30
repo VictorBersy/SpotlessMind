@@ -1,0 +1,20 @@
+{% include 'templates/head.twig' %}
+{% block head %}
+{% endblock %}
+</head>
+<body>
+
+<div class="row">
+
+	{% include 'templates/sidebar.twig' %}
+
+	{% block content %}
+	{% endblock %}
+
+</div>
+
+{% include 'templates/footer.twig'%}
+{% block footer %}
+{% endblock %}
+</body>
+</html>
