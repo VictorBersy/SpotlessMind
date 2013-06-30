@@ -35,3 +35,11 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 				return $translator;	
 		}));
+
+/* Useful for home view */
+$done = array('first'  => false, 'second' => false, 'third'  => false, 'fourth' => false);
+
+$user = $app['session']->get('user');
+if (isset($user['twitter'])) { // User is logged in, first step : ok
+	$done['first'] = true;
+}

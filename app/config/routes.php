@@ -5,8 +5,12 @@ $app->get('/', function () use ($app) {
 })
 ->bind('root');
 
-$app->get('/{_locale}/', function () use ($app) {
-    return $app['twig']->render('pages/home/home.twig');
+$app->get('/{_locale}/', function () use ($app, $done, $user) {
+		$forTwig = array(
+			'done' => $done,
+			'user' => $user,
+		);
+    return $app['twig']->render('pages/home/home.twig', $forTwig);
 })
 ->bind('home');
 
@@ -23,6 +27,14 @@ $app->get('/{_locale}/', function () use ($app) {
 		})
 		->bind('callback_twitter');
 /* End Twitter */
+
+
+$app->get('/{_locale}/logout/', function () use ($app) {
+		require_once __DIR__.'/../controllers/logout.php';
+		return $app->redirect($app['url_generator']->generate('home'));
+})
+->bind('logout');
+
 
 /* ONLY FOR DEBUGGING */
 if ($app['debug']) {

@@ -12,4 +12,17 @@ $token_credentials = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 // We store them to use it later, when we'll make requests
 $app['session']->set('twitter', array('token_credentials' => $token_credentials));
 
+$user_infos = $connection->get('account/verify_credentials', array('skip_status' => 'true'));
+
+$useful_infos = array(
+	'name'          => $user_infos->name,
+	'profile_image' => str_replace('_normal', '', $user_infos->profile_image_url_https), // to get original avatar
+	'screen_name'   => $user_infos->screen_name,
+	'description'   => $user_infos->description,
+);
+
+$app['session']->set(
+	'user',	array('twitter' => array('useful_infos' => $useful_infos))
+);
+
 ?>

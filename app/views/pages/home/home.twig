@@ -3,73 +3,67 @@
 
 <div class="large-9 large-offset-1 columns">
 
-
-	<div class="first step">
+	<div class="first {% if not done.first %}done{% endif %} step">
 		<div class="row">
-
 			<div class="large-1 columns number">
 				<h1>1.</h1>
 			</div>
-
 			<div class="large-11 columns content">
+				{% if not done.first %}
 				<p>{{ 'home.first.login'|trans }}</p>
-				<a href="redirect/twitter/">{{ 'home.first.login.link'|trans }}</a>
+				<a href="{{ url('redirect_twitter') }}">{{ 'home.first.login.link'|trans }}</a>
+				{% else %}
+				<div class="row">
+					<div class="large-3 columns">
+						<img src=" {{ user.twitter.useful_infos.profile_image }}" alt="profile picture of {{ user.twitter.useful_infos.screen_name }}">
+					</div>
+					<div class="large-9 columns">
+						<h2>{{ 'home.first.hello'|trans }} @{{user.twitter.useful_infos.screen_name}} !</h2>
+						<a href="{{ url('logout') }}">{{ 'home.first.logout'|trans }}</a>
+					</div>
+				</div>
+				{% endif %}
 			</div>
-
 		</div>
 	</div>
 
 	<hr>
-
-	<div class="second step">
+	<div class="second {% if not done.second %}done{% endif %} step">
 		<div class="row">
-
 			<div class="large-1 columns number">
 				<h1>2.</h1>
 			</div>
-
 			<div class="large-11 columns content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, consectetur voluptatum cupiditate consequatur maiores consequuntur nostrum culpa quia. A dolor sunt repudiandae facere in? Doloribus, id fuga dolorem quas voluptatum.</p>
+				
 			</div>
-
 		</div>
 	</div>
 
+
 	<hr>
-
-	<div class="third step">
+	<div class="third {% if not done.third %}done{% endif %} step">
 		<div class="row">
-
 			<div class="large-1 columns number">
 				<h1>3.</h1>
 			</div>
-
 			<div class="large-11 columns content">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, laudantium, quae illo fugiat enim veniam inventore nisi ipsum atque quaerat saepe ab ratione! Facilis perspiciatis soluta officiis vel deserunt fugiat?</p>
 			</div>
-
 		</div>
 	</div>
 
+
 	<hr>
-
-	<div class="fourth step"
-	
+	<div class="fourth {% if not done.fourth %}done{% endif %} step">
 		<div class="row">
-
 			<div class="large-1 columns number">
 				<h1>4.</h1>
 			</div>
-
 			<div class="large-11 columns content">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, earum iste enim odio velit quis maxime officiis ex atque voluptates? Numquam, quis dolorem repellendus minima enim fugit cumque eveniet ipsam.</p>
 			</div>
-
 		</div>
 	</div>
 
-	<hr>
-
 </div>
-
 {% endblock %}
