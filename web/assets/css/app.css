@@ -1,3 +1,11 @@
 .row {
 	max-width: 1800px;
 }
+.step h1 {
+	font-size: 6em;
+	margin: 0;
+}
+
+.first .content {
+	margin-top: 1.25em;
+}

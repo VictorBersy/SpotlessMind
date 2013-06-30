@@ -1,5 +1,7 @@
 <?php
 
+include('keys_twitter.php');
+
 $app['debug'] = true;
 
 use Symfony\Component\Translation\Loader\YamlFileLoader;
@@ -7,7 +9,7 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 /* Register our services from Silex */
  /* Twig Service Provider */
 		$app->register(new Silex\Provider\TwigServiceProvider(), array(
-			'twig.path'      => __DIR__.'/../views/',
+			'twig.path'	=> __DIR__.'/../views/',
 		));
 
 	/* Session Service Provider */
@@ -16,7 +18,10 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 	/* Swiftmailer Service Provider */
 		$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
-	/* Swiftmailer Service Provider */
+	/* URL Generator Service Provider */
+		$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
+	/* Translation Service Provider */
 		$app->register(new Silex\Provider\TranslationServiceProvider(), array(
 				'locale_fallback' => 'en_US',
 		));

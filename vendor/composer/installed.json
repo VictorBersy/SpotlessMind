@@ -1948,5 +1948,33 @@
         ],
         "description": "Symfony Yaml Component",
         "homepage": "http://symfony.com"
+    },
+    {
+        "name": "kertz/twitteroauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kertz/twitteroauth.git",
+            "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kertz/twitteroauth/zipball/30d9fba685516cfeee12bdf0aa50d803f112214b",
+            "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2012-08-02 14:24:38",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "twitteroauth"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/"
     }
 ]

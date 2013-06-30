@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "72a99ddf1bb3af84c79537b1d49f067b",
+    "hash": "dccf3c84811e1df9b252b454926120a4",
     "packages": [
         {
             "name": "doctrine/common",
@@ -136,6 +136,32 @@
                 "queryobject"
             ],
             "time": "2013-05-11 07:45:37"
+        },
+        {
+            "name": "kertz/twitteroauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kertz/twitteroauth.git",
+                "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kertz/twitteroauth/zipball/30d9fba685516cfeee12bdf0aa50d803f112214b",
+                "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "twitteroauth"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2012-08-02 14:24:38"
         },
         {
             "name": "monolog/monolog",
@@ -1898,7 +1924,8 @@
     "stability-flags": {
         "symfony/config": 20,
         "symfony/twig-bridge": 20,
-        "symfony/yaml": 20
+        "symfony/yaml": 20,
+        "kertz/twitteroauth": 20
     },
     "platform": [
 

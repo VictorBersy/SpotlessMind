@@ -21,6 +21,7 @@
         "swiftmailer/swiftmailer": "5.*",
         "symfony/config": "@dev",
         "symfony/yaml": "@dev",
-        "symfony/twig-bridge": "@dev"
+        "symfony/twig-bridge": "@dev",
+        "kertz/twitteroauth": "@dev"
     }
 }
