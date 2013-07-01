@@ -24,6 +24,7 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 	/* Translation Service Provider */
 		$app->register(new Silex\Provider\TranslationServiceProvider(), array(
 				'locale_fallback' => 'en_US',
+				'locale'          => 'en_US',
 		));
 
 	/* Translation Service Provider */
@@ -42,4 +43,9 @@ $done = array('first'  => false, 'second' => false, 'third'  => false, 'fourth' 
 $user = $app['session']->get('user');
 if (isset($user['twitter'])) { // User is logged in, first step : ok
 	$done['first'] = true;
+}
+
+$twitter_ex_infos = $app['session']->get('twitter_ex_infos');
+if ( (!isset($twitter_ex_infos['error'])) && (isset($twitter_ex_infos['useful_infos'])) ) { // No error, and useful_infos is set, I think it's okay
+	$done['second'] = true;
 }

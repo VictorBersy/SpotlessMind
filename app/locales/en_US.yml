@@ -4,3 +4,9 @@ home.first.login: "First, login with your Twitter account."
 home.first.login.link: "Login with Twitter"
 home.first.hello: "Hi"
 home.first.logout: "Logout"
+
+home.second.title: "So, tell me, who's your ex ?"
+home.second.input.placeholder: "Enter his pseudo on twitter..."
+
+home.second.title.first_part: "So, "
+home.second.title.second_part: "is your ex, right ?"

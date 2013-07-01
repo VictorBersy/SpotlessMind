@@ -12,6 +12,7 @@ $token_credentials = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 // We store them to use it later, when we'll make requests
 $app['session']->set('twitter', array('token_credentials' => $token_credentials));
 
+// Grabbing stuff about connected account
 $user_infos = $connection->get('account/verify_credentials', array('skip_status' => 'true'));
 
 $useful_infos = array(

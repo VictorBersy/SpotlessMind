@@ -5,27 +5,34 @@ $app->get('/', function () use ($app) {
 })
 ->bind('root');
 
-$app->get('/{_locale}/', function () use ($app, $done, $user) {
+$app->get('/{_locale}/', function () use ($app, $done, $user, $twitter_ex_infos) {
 		$forTwig = array(
-			'done' => $done,
-			'user' => $user,
+			'done'             => $done,
+			'user'             => $user,
+			'twitter_ex_infos' => $twitter_ex_infos,
 		);
     return $app['twig']->render('pages/home/home.twig', $forTwig);
 })
 ->bind('home');
 
 /* Twitter */
-		$app->get('/{_locale}/redirect/twitter/', function () use ($app) {
+		$app->get('/twitter/redirect/', function () use ($app) {
 			require_once __DIR__.'/../controllers/redirect_twitter.php';
 			return $app->redirect($redirect_url); // var from controllers/redirect_twitter.php
 		})
 		->bind('redirect_twitter');
 
-		$app->get('/{_locale}/callback/twitter/', function () use ($app) {
+		$app->get('/twitter/callback/', function () use ($app) {
 			require_once __DIR__.'/../controllers/callback_twitter.php';
 			return $app->redirect($app['url_generator']->generate('home'));
 		})
 		->bind('callback_twitter');
+
+		$app->post('/twitter/save_ex/', function () use ($app) {
+			require_once __DIR__.'/../controllers/save_ex_twitter.php';
+			return $app->redirect($app['url_generator']->generate('home'));
+		})
+		->bind('save_ex_twitter');
 /* End Twitter */
 
 

@@ -34,7 +34,32 @@
 				<h1>2.</h1>
 			</div>
 			<div class="large-11 columns content">
-				
+				{% if not done.second %}
+				<h2>{{ 'home.second.title'|trans }}</h2>
+				<form method="POST" action="{{ url('save_ex_twitter') }}">
+				  <div class="row collapse">
+				    <div class="large-1 columns">
+				      <span class="prefix">@</span>
+				    </div>
+				    <div class="large-6 columns">
+				      <input type="text" name="ex_screen_name" id="ex_screen_name" placeholder="{{ 'home.second.input.placeholder'|trans }}">
+				    </div>
+				    <div class="large-2 pull-3 columns">
+				      <input type="submit" href="#" class="button prefix" value="Bybye !">
+				    </div>
+				  </div>
+				</form>
+				{% else %}
+				<div class="row">
+					<div class="large-3 columns">
+						<img src=" {{ twitter_ex_infos.useful_infos.profile_image_url_https }}" alt="profile picture of {{ twitter_ex_infos.useful_infos.screen_name }}">
+						<p class="text-center">{{ twitter_ex_infos.useful_infos.description }}</p>
+					</div>
+					<div class="large-9 columns">
+						<h2>{{ 'home.second.title.first_part'|trans }} @{{twitter_ex_infos.useful_infos.screen_name}} {{ 'home.second.title.second_part'|trans }}</h2>
+					</div>
+				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
