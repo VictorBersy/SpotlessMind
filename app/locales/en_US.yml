@@ -1,5 +1,7 @@
 sidebar.introduction: "Wipe Your Ex allows you to delete all traces of your ex in your digital life."
 
+return.home: "Return to home"
+
 home.first.login: "First, login with your Twitter account."
 home.first.login.link: "Login with Twitter"
 home.first.hello: "Hi"

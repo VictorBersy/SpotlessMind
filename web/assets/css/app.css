@@ -19,3 +19,24 @@
 	.first .content {
 		margin-top: 1.25em;
 	}
+
+.tweet .screen_name {
+	color: #999;
+}
+.tweet .name {
+	color: #999;
+}
+.tweet .date {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+.tweet .text {
+	margin-top: 10px;
+}
+.tweet p.text {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.tweet hr {
+	margin-bottom: 15px;
+}

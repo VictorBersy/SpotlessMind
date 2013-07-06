@@ -30,7 +30,7 @@ if (isset($_POST['yes'])) {
 		$quotient     = floor($nb_favorites / 200);
 
 		if ($rate_limit_favorites > 0) {
-			while ($nb_favorites >= 200) {
+			while ($nb_favorites >= 0) {
 				$params = (isset($max_id)) ? 
 					array('include_entities' => false, 'count' => 200, 'max_id' => $max_id) : 
 					array('include_entities' => false, 'count' => 200);

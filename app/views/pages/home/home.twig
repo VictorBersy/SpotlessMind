@@ -87,12 +87,12 @@
 				<h3>{{ 'home.third.title.first'|trans }} {{ favorites_from_ex|length }} {{ 'home.third.title.second'|trans }} ({{ twitter_ex_infos.useful_infos.screen_name }}).
 					{{ 'home.third.title.third'|trans }}</h3>
 				<div class="row collapse">
-					<form method="POST" action="">
+					<form method="POST" action="{{ url('delete_cancel_see_favorites_ex_tweets') }}">
 						<div class="large-6 columns">
 							<input type="submit" class="button expand success" name="yes" value="{{ 'home.third.confirm.yes'|trans }}" />
 						</div>
 						<div class="large-3 columns">
-							<input type="submit" class="button expand secondary" name="yes" value="{{ 'home.third.confirm.see'|trans }}" />
+							<input type="submit" class="button expand" name="see" value="{{ 'home.third.confirm.see'|trans }}" />
 						</div>
 						<div class="large-3 columns">
 							<input type="submit" class="button expand alert" name="no" value="{{ 'home.third.confirm.no'|trans }}" />

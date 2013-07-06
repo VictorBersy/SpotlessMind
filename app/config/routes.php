@@ -17,6 +17,7 @@ $app->get('/{_locale}/', function () use ($app, $done, $user, $twitter_ex_infos,
 ->bind('home');
 
 /* Twitter */
+	/* Connection, first step */
 		$app->get('/twitter/redirect/', function () use ($app) {
 			require_once __DIR__.'/../controllers/redirect_twitter.php';
 			return $app->redirect($redirect_url); // var from controllers/redirect_twitter.php
@@ -28,7 +29,7 @@ $app->get('/{_locale}/', function () use ($app, $done, $user, $twitter_ex_infos,
 			return $app->redirect($app['url_generator']->generate('home'));
 		})
 		->bind('callback_twitter');
-
+	/* Second step */
 		$app->post('/twitter/save_ex/', function () use ($app) {
 			require_once __DIR__.'/../controllers/save_ex_twitter.php';
 			return $app->redirect($app['url_generator']->generate('home'));
@@ -40,9 +41,15 @@ $app->get('/{_locale}/', function () use ($app, $done, $user, $twitter_ex_infos,
 			return $app->redirect($app['url_generator']->generate('home'));
 		})
 		->bind('is_your_ex_twitter');
+	/* Third step */
+		$app->post('/twitter/delete/cancel/see/favorites/ex/tweets/', function () use ($app) {
+			require_once __DIR__.'/../controllers/delete_cancel_see_favorites_ex_tweets.php';
+			return $toReturn;
+		})
+		->bind('delete_cancel_see_favorites_ex_tweets');
 
-		$app->post('/twitter/see/favorites/from/ex/', function () use ($app, $favorites_from_ex) {
-			return $app['twig']->render('pages/home/home.twig', $favorites_from_ex);
+		$app->get('/twitter/see/favorites/from/ex/', function () use ($app, $favorites_from_ex) {
+			return $app['twig']->render('pages/favorites_from_ex/index.twig', array('favorites_from_ex' => $favorites_from_ex));
 		})
 		->bind('see_favorites_from_ex');
 /* End Twitter */
