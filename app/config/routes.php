@@ -42,7 +42,6 @@ $app->get('/{_locale}/', function () use ($app, $done, $user, $twitter_ex_infos,
 		->bind('is_your_ex_twitter');
 
 		$app->post('/twitter/see/favorites/from/ex/', function () use ($app, $favorites_from_ex) {
-			require_once __DIR__.'/../controllers/see_favorites_from_ex.php';
 			return $app['twig']->render('pages/home/home.twig', $favorites_from_ex);
 		})
 		->bind('see_favorites_from_ex');
