@@ -1,0 +1,25 @@
+{% extends 'templates/main.twig' %}
+{% block content %}
+
+<div class="large-6 large-offset-1 pull-3 columns tweet">
+	{% for favorite in favorites_from_ex %}
+	<div class="row">
+		<div class="large-1 columns">
+			<img src="{{ favorite.user.profile_image_url }}" alt="{{ favorite.user.screen_name|e }}">
+		</div>
+		<div class="large-11 columns">
+			<span class="screen_name">
+				<b class="name">{{ favorite.user.name|e }}</b>
+				@{{ favorite.user.screen_name|e }}
+			</span>
+			<p class="text">{{ favorite.text|e }}</p>
+			<span class="date">
+				<a href="https://twitter.com/{{ favorite.user.screen_name|e }}/status/{{ favorite.id_str|e }}">{{ favorite.created_at|date("d/m/Y h:i:s")|e }}</a>
+			</span>
+		</div>
+	</div>
+	<hr>
+	{% endfor %}
+</div>
+
+{% endblock %}
