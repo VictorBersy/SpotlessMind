@@ -82,6 +82,8 @@
 				<h1>3.</h1>
 			</div>
 			<div class="large-11 columns content">
+			{% if not done.third %}
+			{% else %}
 				<h3>{{ 'home.third.title.first'|trans }} {{ favorites_from_ex|length }} {{ 'home.third.title.second'|trans }} ({{ twitter_ex_infos.useful_infos.screen_name }}).
 					{{ 'home.third.title.third'|trans }}</h3>
 				<div class="row collapse">
@@ -97,6 +99,7 @@
 						</div>
 					</form>
 				</div>
+			{% endif %}
 			</div>
 		</div>
 	</div>
