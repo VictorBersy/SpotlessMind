@@ -1,6 +1,6 @@
 <?php
 
-// We create those tokens in callback_twitter.php
+// We created those tokens in callback_twitter.php
 $twitter_session = $app['session']->get('twitter');
 $twitter_session = $twitter_session['token_credentials']; 
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $twitter_session['oauth_token'], $twitter_session['oauth_token_secret']);

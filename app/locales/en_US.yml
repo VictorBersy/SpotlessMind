@@ -10,3 +10,12 @@ home.second.input.placeholder: "Enter his pseudo on twitter..."
 
 home.second.title.first_part: "So, "
 home.second.title.second_part: "is your ex, right ?"
+home.second.confirm.yes: "Yes !"
+home.second.confirm.no: "No."
+
+home.third.title.first: "You've"
+home.third.title.second: "favorites from your ex"
+home.third.title.third: "Are you sure you want to erase all ?"
+home.third.confirm.yes: "FUCK YEAH ! WIPE EVERYTHIIINNNG !!"
+home.third.confirm.see: "Can I see them before ?"
+home.third.confirm.no: "Meh ... No :("

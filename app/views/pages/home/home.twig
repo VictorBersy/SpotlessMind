@@ -57,6 +57,16 @@
 					</div>
 					<div class="large-9 columns">
 						<h2>{{ 'home.second.title.first_part'|trans }} @{{twitter_ex_infos.useful_infos.screen_name}} {{ 'home.second.title.second_part'|trans }}</h2>
+						<div class="row collapse">
+							<form method="POST" action="{{ url('is_your_ex_twitter') }}">
+								<div class="large-9 columns">
+									<input type="submit" class="button expand success" name="yes" value="{{ 'home.second.confirm.yes'|trans }}" />
+								</div>
+								<div class="large-3 columns">
+									<input type="submit" class="button expand alert" name="no" value="{{ 'home.second.confirm.no'|trans }}" />
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 				{% endif %}
@@ -72,7 +82,21 @@
 				<h1>3.</h1>
 			</div>
 			<div class="large-11 columns content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, laudantium, quae illo fugiat enim veniam inventore nisi ipsum atque quaerat saepe ab ratione! Facilis perspiciatis soluta officiis vel deserunt fugiat?</p>
+				<h3>{{ 'home.third.title.first'|trans }} {{ favorites_from_ex|length }} {{ 'home.third.title.second'|trans }} ({{ twitter_ex_infos.useful_infos.screen_name }}).
+					{{ 'home.third.title.third'|trans }}</h3>
+				<div class="row collapse">
+					<form method="POST" action="">
+						<div class="large-6 columns">
+							<input type="submit" class="button expand success" name="yes" value="{{ 'home.third.confirm.yes'|trans }}" />
+						</div>
+						<div class="large-3 columns">
+							<input type="submit" class="button expand secondary" name="yes" value="{{ 'home.third.confirm.see'|trans }}" />
+						</div>
+						<div class="large-3 columns">
+							<input type="submit" class="button expand alert" name="no" value="{{ 'home.third.confirm.no'|trans }}" />
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

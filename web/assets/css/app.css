@@ -1,9 +1,10 @@
 /* General */
 .row {
-	max-width: 1800px;
+	max-width: 100em;
 }
 .done,
-.done h1{
+.done h1,
+.done h2{
 	color: #C5C5C5;
 }
 

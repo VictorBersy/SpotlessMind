@@ -10,3 +10,12 @@ home.second.input.placeholder: "Entrez son pseudo sur Twitter..."
 
 home.second.title.first_part: "Donc c'est "
 home.second.title.second_part: " votre ex, huh ?"
+home.second.confirm.yes: "Ouais !"
+home.second.confirm.no: "Non."
+
+home.third.title.first: "Vous avez"
+home.third.title.second: "favoris de votre ex"
+home.third.title.third: "Êtes vous sûr de tout vouloir effacer ?"
+home.third.confirm.yes: "PUTAIN OUAIS ! EFFACE TOUUUUTTT !!"
+home.third.confirm.see: "J'peux les voir avant ?"
+home.third.confirm.no: "Meh... Non :("
